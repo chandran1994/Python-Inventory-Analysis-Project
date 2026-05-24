@@ -1,4 +1,4 @@
-# Chapter 7 — Warehouse and Inventory Management
+# Warehouse and Inventory Management
 
 ## Overview
 This Project focuses on the warehouse operations and inventory management within supply chain analytics. It covers inventory classification methods, inventory control techniques, warehouse optimization, and analytical approaches used to improve operational efficiency and service levels.
