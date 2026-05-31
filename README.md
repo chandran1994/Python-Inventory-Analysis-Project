@@ -1,201 +1,143 @@
-# Warehouse and Inventory Management
+# Warehouse and Inventory Management Analytics
 
-## Overview
-This Project focuses on the warehouse operations and inventory management within supply chain analytics. It covers inventory classification methods, inventory control techniques, warehouse optimization, and analytical approaches used to improve operational efficiency and service levels.
+## Project Overview
 
-## Project Notebooks
+This project focuses on solving inventory management challenges using data analytics and machine learning techniques. The objective was to analyze demand patterns, calculate optimal inventory control parameters, and develop predictive models capable of identifying inventory risks before they impact operations.
 
-| Notebook | Purpose |
-|-----------|----------|
-| LTDemand.ipynb | Lead Time Demand calculation and inventory consumption analysis |
-| SafetyStock & ROP.ipynb | Safety stock and reorder point optimization |
-| Inventory - Stockout prediction.ipynb | Machine learning model to predict stockout risk |
+The project was divided into three analytical components:
+
+| Notebook                              | Objective                                                     |
+| ------------------------------------- | ------------------------------------------------------------- |
+| LTDemand.ipynb                        | Estimate Lead Time Demand using historical sales transactions |
+| SafetyStock & ROP.ipynb               | Calculate Safety Stock and Reorder Point levels               |
+| Inventory - Stockout prediction.ipynb | Predict stockout risk using machine learning                  |
 
 ## Project Notebooks
 
 ### Lead Time Demand Analysis
+
 📓 [View Notebook](https://nbviewer.org/github/chandran1994/Python-Inventory-Analysis-Project/blob/main/LTDemand.ipynb)
 
 ### Safety Stock & Reorder Point Analysis
+
 📓 [View Notebook](https://nbviewer.org/github/chandran1994/Python-Inventory-Analysis-Project/blob/main/SafetyStock%20%26%20ROP.ipynb)
 
 ### Inventory Stockout Prediction
+
 📓 [View Notebook](https://nbviewer.org/github/chandran1994/Python-Inventory-Analysis-Project/blob/main/Inventory%20-%20Stockout%20prediction.ipynb)
 
 ---
 
-# Topics Covered
+# Analytical Workflow
 
-## 1. Warehouse Management
-- Role of warehouses in supply chains
-- Warehouse functions
-  - Receiving
-  - Storage
-  - Picking
-  - Packing
-  - Shipping
-- Warehouse layout optimization
-- Space utilization
-- Order fulfillment efficiency
-- Warehouse KPIs
-
----
-
-## 2. Inventory Management Fundamentals
-- Purpose of inventory
-- Types of inventory
-  - Raw materials
-  - Work-in-progress (WIP)
-  - Finished goods
-  - Safety stock
-- Inventory carrying costs
-- Stockout costs
-- Inventory turnover
+```text
+Sales Data
+    ↓
+Lead Time Demand Analysis
+    ↓
+Safety Stock Calculation
+    ↓
+Reorder Point Optimization
+    ↓
+Stockout Prediction Model
+    ↓
+Inventory Planning Decisions
+```
 
 ---
 
-## 3. ABC Classification Analysis
-### Concept
-ABC analysis classifies inventory based on value and importance.
+## Data Preparation
 
-### Categories
-- **A Items**
-  - High value
-  - Low quantity
-  - Strict monitoring
+The datasets were cleaned and transformed to ensure reliable analytical results.
 
-- **B Items**
-  - Moderate value
-  - Moderate control
+Key preprocessing activities included:
 
-- **C Items**
-  - Low value
-  - High quantity
-  - Simple control methods
-
-### Applications
-- Inventory prioritization
-- Resource allocation
-- Replenishment planning
+* Missing value treatment
+* Data type optimization
+* Feature engineering
+* Outlier inspection
+* Aggregation of daily demand
+* Inventory metric calculations
+* Categorical variable encoding
 
 ---
 
-## 4. EOQ (Economic Order Quantity)
-### Objective
-Determine the optimal order quantity that minimizes:
-- Ordering costs
-- Holding costs
+## Lead Time Demand Analysis
 
-### Key Components
-- Demand rate
-- Ordering cost
-- Holding cost
+The first stage of the project focused on estimating Lead Time Demand (LTD), representing the quantity of inventory expected to be consumed while waiting for replenishment.
 
-### Benefits
-- Reduced inventory costs
-- Improved replenishment planning
+Historical sales transactions were aggregated into daily demand values and analyzed across multiple time periods. Demand variability was measured to understand consumption uncertainty and identify products with unstable demand patterns.
 
----
+### Core Calculation
 
-## 5. Safety Stock and Reorder Point
-### Safety Stock
-Extra inventory maintained to reduce stockout risk.
+```python
+Lead Time Demand = Average Daily Demand × Lead Time
+```
 
-### Reorder Point (ROP)
-Inventory level at which a new order should be placed.
-
-### Factors Affecting Safety Stock
-- Demand variability
-- Lead time variability
-- Service level targets
+This analysis established the inventory consumption baseline required for replenishment planning.
 
 ---
 
-## 6. Service Level Metrics
-### Important KPIs
-- Fill Rate
-- Service Level
-- Stockout Rate
-- Order Cycle Time
-- Inventory Turnover Ratio
+## Safety Stock & Reorder Point Optimization
 
-### Business Importance
-- Customer satisfaction
-- Operational stability
-- Reduced lost sales
+Using Lead Time Demand results, inventory buffers were calculated to reduce stockout risk while maintaining target service levels.
 
----
+Safety Stock calculations incorporated demand variability and lead time uncertainty.
 
-## 7. Forecasting and Inventory Planning
-### Forecasting Methods
-- Moving Average
-- Weighted Average
-- Exponential Smoothing
+### Core Calculations
 
-### Forecasting Challenges
-- Demand uncertainty
-- Seasonal demand
-- Promotional effects
+```python
+Safety Stock = Z × σLTD
+
+Reorder Point = Lead Time Demand + Safety Stock
+```
+
+Where:
+
+* Z = Service level factor
+* σLTD = Standard deviation of Lead Time Demand
+
+The analysis identified optimal inventory thresholds for replenishment decisions and inventory control.
 
 ---
 
-## 8. Classification Algorithms in Warehouse Analytics
-### Machine Learning Applications
-- Product classification
-- Demand prediction
-- Inventory segmentation
-- Warehouse optimization
+## Inventory Stockout Prediction
 
-### Algorithms Discussed
-- Logistic Regression
-- Decision Trees
-- Classification models
+The final stage of the project focused on predicting future stockout risk using machine learning.
 
-### Analytical Goals
-- Predict stockouts
-- Predict fast-moving items
-- Improve replenishment strategies
+Inventory, demand, and operational features were analyzed to identify variables associated with stockout events.
 
----
+The dataset was prepared using feature engineering and categorical encoding techniques before model development.
 
-# Important KPIs
+### Machine Learning Pipeline
 
-| KPI | Description |
-|---|---|
-| Inventory Turnover | Measures inventory efficiency |
-| Fill Rate | Percentage of customer demand fulfilled |
-| Service Level | Probability of avoiding stockouts |
-| Carrying Cost | Cost of holding inventory |
-| Order Accuracy | Correct shipment percentage |
-| Warehouse Utilization | Storage efficiency |
+```text
+Data Cleaning
+      ↓
+Feature Engineering
+      ↓
+Train-Test Split
+      ↓
+Model Training
+      ↓
+Prediction
+      ↓
+Model Evaluation
+```
+
+The resulting classification model predicts whether a product is likely to experience a stockout, allowing planners to take corrective actions before inventory shortages occur.
 
 ---
 
-# Business Problems Solved
-- Excess inventory
-- Frequent stockouts
-- Poor warehouse utilization
-- Slow order fulfillment
-- Inefficient replenishment
-- High logistics costs
+## Business Value
+
+This project demonstrates how inventory analytics can support operational decision-making by:
+
+* Reducing stockout risk
+* Improving inventory availability
+* Supporting replenishment planning
+* Optimizing inventory investment
+* Enhancing service-level performance
+* Enabling proactive inventory management
 
 ---
-
-# Analytics & Technical Skills Used
-## Data Analytics
-- Exploratory Data Analysis (EDA)
-- KPI analysis
-- Trend analysis
-- Forecasting
-- Inventory optimization
-
-## Machine Learning
-- Classification algorithms
-- Logistic regression
-- Predictive analytics
-
-## Supply Chain Analytics
-- Safety stock analysis
-- Service level optimization
-- Demand planning
-- Inventory segmentation
