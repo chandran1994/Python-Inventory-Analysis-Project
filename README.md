@@ -5,6 +5,14 @@ This Project focuses on the warehouse operations and inventory management within
 
 ## Project Notebooks
 
+| Notebook | Purpose |
+|-----------|----------|
+| LTDemand.ipynb | Lead Time Demand calculation and inventory consumption analysis |
+| SafetyStock & ROP.ipynb | Safety stock and reorder point optimization |
+| Inventory - Stockout prediction.ipynb | Machine learning model to predict stockout risk |
+
+## Project Notebooks
+
 ### Lead Time Demand Analysis
 📓 [View Notebook](https://nbviewer.org/github/chandran1994/Python-Inventory-Analysis-Project/blob/main/LTDemand.ipynb)
 
