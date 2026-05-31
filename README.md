@@ -180,5 +180,3 @@ Inventory level at which a new order should be placed.
 - Service level optimization
 - Demand planning
 - Inventory segmentation
-
----tical role in supply chain efficiency. Combining operational strategies with analytics and machine learning enables organizations to reduce costs, improve service levels, and optimize inventory performance.
