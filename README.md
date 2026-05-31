@@ -3,6 +3,17 @@
 ## Overview
 This Project focuses on the warehouse operations and inventory management within supply chain analytics. It covers inventory classification methods, inventory control techniques, warehouse optimization, and analytical approaches used to improve operational efficiency and service levels.
 
+## Project Notebooks
+
+### Lead Time Demand Analysis
+📓 [View Notebook](https://nbviewer.org/github/chandran1994/Python-Inventory-Analysis-Project/blob/main/LTDemand.ipynb)
+
+### Safety Stock & Reorder Point Analysis
+📓 [View Notebook](https://nbviewer.org/github/chandran1994/Python-Inventory-Analysis-Project/blob/main/SafetyStock%20%26%20ROP.ipynb)
+
+### Inventory Stockout Prediction
+📓 [View Notebook](https://nbviewer.org/github/chandran1994/Python-Inventory-Analysis-Project/blob/main/Inventory%20-%20Stockout%20prediction.ipynb)
+
 ---
 
 # Topics Covered
