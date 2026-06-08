@@ -131,7 +131,7 @@ The resulting classification model predicts whether a product is likely to exper
 
 ## Business Value
 
-This project demonstrates how inventory analytics can support operational decision-making by :
+This project demonstrates how inventory analytics can support operational decision-making by -
 
 * Reducing stockout risk
 * Improving inventory availability
